@@ -1,7 +1,6 @@
 const { Router } = require('hyper-express');
 const { userController } = require('../controllers');
 const { createUserSchema } = require('../validations');
-const { z } = require('zod');
 
 const router = new Router();
 

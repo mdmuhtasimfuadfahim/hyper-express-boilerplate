@@ -1,7 +1,7 @@
-const { mockAPIValidation } = require('./mockAPI.validation');
-const { userValidation } = require('./user.validation');
+const { createMockDataSchema } = require('./mockAPI.validation');
+const { createUserSchema } = require('./user.validation');
 
 module.exports = {
-    mockAPIValidation,
-    userValidation,
+    createMockDataSchema,
+    createUserSchema,
 };

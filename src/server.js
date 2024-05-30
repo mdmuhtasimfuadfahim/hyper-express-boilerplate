@@ -1,7 +1,7 @@
 const HyperExpress = require('hyper-express');
 const config = require('./config');
 const logger = require('./middlewares/logger');
-const { mockAPIRoutes } = require('./routes');
+const { mockAPIRoutes, userRoutes } = require('./routes'); // Import userRoutes
 const compression = require('compression');
 const connectDB = require('./db');
 
@@ -15,6 +15,10 @@ connectDB();
 
 // Use logger middleware
 app.use(logger);
+
+// Use routes
+app.use('/api', mockAPIRoutes);
+app.use('/api', userRoutes); // Use userRoutes
 
 // Start the server
 app.listen(config.PORT)

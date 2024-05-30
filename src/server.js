@@ -2,14 +2,19 @@ const HyperExpress = require('hyper-express');
 const config = require('./config');
 const logger = require('./middlewares/logger');
 const { mockAPIRoutes } = require('./routes');
+const compression = require('compression');
+const connectDB = require('./db');
 
 const app = new HyperExpress.Server();
 
+// Connect to MongoDB
+connectDB();
+
+// Use compression middleware
+// app.use(compression());
+
 // Use logger middleware
 app.use(logger);
-
-// Use routes
-app.use('/api', mockAPIRoutes);
 
 // Start the server
 app.listen(config.PORT)

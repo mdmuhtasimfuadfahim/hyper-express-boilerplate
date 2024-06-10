@@ -4,7 +4,7 @@
   "description": "A hyper express boilerplate to use in big project",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "nodemon src/server.js"
   },
   "keywords": [
     "hyper-express",
@@ -15,6 +15,10 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "hyper-express": "^6.16.2",
+    "mongodb": "^6.7.0",
+    "sails-disk": "^2.1.2",
+    "sails-mongo": "^2.1.1",
+    "waterline": "^0.15.2",
     "zod": "^3.23.8"
   }
 }

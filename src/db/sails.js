@@ -1,4 +1,3 @@
-// sails.js
 const Waterline = require('waterline');
 const sailsDiskAdapter = require('sails-disk');
 const mongoAdapter = require('sails-mongo');

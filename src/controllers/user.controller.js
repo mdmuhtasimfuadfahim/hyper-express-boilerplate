@@ -2,14 +2,14 @@ const { userService } = require('../services');
 
 const createUser = async (req, res) => {
     try {
-        const body = await req.json();
-        const newUser = await userService.createUser(body);
+        const body = req.body;
+        const image = req.file;
+        const newUser = await userService.createUser({ userData: body, image: image });
         res.status(200).json({ message: newUser.message, data: newUser.data });
     } catch (error) {
         res.status(400).json({ message: error.message, data: null });
     }
 };
-
 const getUser = async (req, res) => {
     try {
         const userId = req.params.id;

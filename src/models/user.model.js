@@ -22,6 +22,10 @@ const User = Waterline.Collection.extend({
             type: 'string',
             required: true
         },
+        image: {
+            type: 'string',
+            required: false
+        },
     },
 });
 

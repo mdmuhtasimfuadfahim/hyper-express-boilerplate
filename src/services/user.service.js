@@ -1,10 +1,16 @@
 const { ObjectId } = require('mongodb');
+const { uploadImage } = require('../helpers/image.helper');
 
-const createUser = async (userData) => {
+const createUser = async ({ userData, image }) => {
     const existingUser = await User.findOne({ email: userData.email });
 
     if (existingUser) {
         throw new Error('A user with this email already exists');
+    }
+
+    if (image) {
+        const imageUrl = await uploadImage(image);
+        userData.image = imageUrl;
     }
 
     const newUser = await User.create(userData);
